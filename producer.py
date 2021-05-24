@@ -9,10 +9,10 @@ from kafka import KafkaProducer
 
 def get_api_from_key_file(key_file):
     with open(key_file, 'r') as keys:
-        consumer_key = 'nt9IMcBqnGDbmonf7hlB9Xxzq', keys.readline().rstrip()
-        consumer_secret = 'lA5F5H9zoUtumWmPbeFwWIHfd5sTgM9mG41HN6degquUoirD61', keys.readline().rstrip()
-        access_token = '1381549125624344577-pjYUzjmhpOL9dBZq6MYpwjHTJobJfs', keys.readline().rstrip()
-        access_token_secret = 'YRDr91DPXoGaRMsIQnjMEfgKlCRZi2R8ek9G30etb2oY2', keys.readline().rstrip()
+        consumer_key =  keys.readline().rstrip()
+        consumer_secret =  keys.readline().rstrip()
+        access_token = keys.readline().rstrip()
+        access_token_secret = keys.readline().rstrip()
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     return tweepy.API(auth)
